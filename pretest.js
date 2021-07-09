@@ -31,9 +31,9 @@ if (process.env.MYSQL_HOST) {
 if (process.env.MYSQL_PORT) {
   args.push('--port=' + process.env.MYSQL_PORT);
 }
-if (process.env.MYSQL_PASSWORD) {
-  args.push('--password=' + process.env.MYSQL_PASSWORD);
-}
+// if (process.env.MYSQL_PASSWORD) {
+//   args.push('--password=' + process.env.MYSQL_PASSWORD);
+// }
 
 console.log('seeding DB with example db...');
 const mysql = cp.spawn('mysql', args, {stdio: stdio});

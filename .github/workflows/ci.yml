@@ -45,7 +45,7 @@ jobs:
       - run: npm test
         env:
           MYSQL_USER: root
-          MYSQL_PASSWORD: root
+          MYSQL_PASSWORD: ''
           CI: true
   code-lint:
     name: Code Lint

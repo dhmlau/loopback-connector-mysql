@@ -41,11 +41,13 @@ jobs:
       - uses: ankane/setup-mysql@v1
         with:
           mysql-version: 8.0
+      - run: |
+          sudo mysql -e "CREATE USER 'test'@'localhost' IDENTIFIED BY 'test'"
       - run: npm install
       - run: npm test
         env:
-          MYSQL_USER: root
-          MYSQL_PASSWORD: ''
+          MYSQL_USER: test
+          MYSQL_PASSWORD: test
           CI: true
   code-lint:
     name: Code Lint
